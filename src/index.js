@@ -4,15 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
-let name = 'cc';
-let _h1 = <h1>this is h1 32 + {name}</h1>
-
 ReactDOM.render(
   <React.StrictMode>
-   {
-     <App></App>
-   }
+    {
+      <div>
+        <App></App>
+      </div>
+    }
   </React.StrictMode>,
   document.getElementById('root')
 );
