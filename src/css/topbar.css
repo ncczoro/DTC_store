@@ -1,0 +1,24 @@
+:root {
+    --topbar-color: #666
+}
+#topbar {
+    color: var(--topbar-color);
+    height: 50px;
+    line-height: 50px;
+}
+
+#topbar a {
+    color: var(--topbar-color);
+    padding: 0 20px 0 0;
+    font-size: 14px;
+}
+
+.khuyen-mai {
+    position: relative;
+  animation: mymove infinite;
+  animation-duration: 6s;
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 400px;}
+  }

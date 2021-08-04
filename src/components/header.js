@@ -1,12 +1,8 @@
 
 import React, { Component } from 'react';
-import './css/header.css';
-import { Button, PageHeader } from 'antd';
+import '../css/header.css';
+import { Menu, Layout } from 'antd';
 
-import { Menu, Layout, Breadcrumb } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined, UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-
-const { SubMenu } = Menu;
 const { Header } = Layout;
 
 class HeaderDTC extends Component {

@@ -1,15 +1,16 @@
 
 import React, { Component } from 'react';
 import './App.css';
-import logo from './logo.svg';
-import HeaderDTC from './page/header';
-import ContentDTC from './page/content';
-import FooterDTC from './page/footer';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import HeaderDTC from './components/header';
+import ContentDTC from './components/content';
+import FooterDTC from './components/footer';
+import TopBar from './components/topbar';
+import { Layout } from 'antd';
 class App extends Component {
   render() {
     return (
       <Layout>
+        <TopBar></TopBar>
         <HeaderDTC></HeaderDTC>
         <ContentDTC></ContentDTC>
         <FooterDTC></FooterDTC>
