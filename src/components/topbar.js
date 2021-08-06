@@ -28,7 +28,7 @@ class TopBar extends Component {
                 <Row>
                     <Col span={6}>
                         <div className="fl-r">
-                            HOT LINE: <strong>(+84) 966116865</strong>
+                            HOT LINE: <strong>(+84) 966116865</strong>  {this.props.children}
                         </div>
                     </Col>
                     <Col span={12}>

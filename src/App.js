@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <TopBar></TopBar>
+        <TopBar x="xx">noi dung children</TopBar>
         <HeaderDTC></HeaderDTC>
         <ContentDTC></ContentDTC>
         <FooterDTC></FooterDTC>
