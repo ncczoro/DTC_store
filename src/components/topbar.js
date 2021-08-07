@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Menu, Dropdown, Button, message, Divider  } from 'antd';
+import { Row, Col, Menu, Dropdown, message, Divider  } from 'antd';
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import '../css/topbar.css';
 import '../App.css';
@@ -28,12 +28,12 @@ class TopBar extends Component {
                 <Row>
                     <Col span={6}>
                         <div className="fl-r">
-                            HOT LINE: <strong>(+84) 966116865</strong>  {this.props.children}
+                            HOT LINE: <strong>(+84) 966116865</strong>
                         </div>
                     </Col>
                     <Col span={12}>
                         <div className="khuyen-mai">
-                            Hot sale hôm nay, Free ship mọi miền tổ quốc
+                            Khuyến mãi hôm nay...
                         </div>
                     </Col>
                     <Col span={6}>

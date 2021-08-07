@@ -1,10 +1,12 @@
 :root {
-    --topbar-color: #666
+    --topbar-color: #666;
+    --topbar-background: #EFF1F2;
 }
 #topbar {
     color: var(--topbar-color);
     height: 50px;
     line-height: 50px;
+    background-color: var(--topbar-background);
 }
 
 #topbar a {

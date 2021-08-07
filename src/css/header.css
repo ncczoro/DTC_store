@@ -14,3 +14,8 @@
 .site-layout-background {
   background: #fff;
 }
+
+.container-header-search{
+  height: 70px;
+  line-height: 35px;
+}

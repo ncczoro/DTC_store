@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import '../css/header.css';
 import '../App.css';
-import { Menu, Layout, Row, Col, Select, Input, Space } from 'antd';
+import { Menu, Layout, Row, Col, Select, Input, Space, Avatar, Badge } from 'antd';
+import { UserOutlined, HeartOutlined, ShoppingOutlined } from '@ant-design/icons';
 
 const { Header } = Layout;
 const { Option } = Select;
@@ -13,20 +14,20 @@ class HeaderDTC extends Component {
     render() {
         return (
             <div>
-                <Row>
+                <Row className="container-header-search">
                     <Col span={6}>
                         <div className="fl-r">
-                            <strong>DTC Boys</strong>
+                            <strong>DTC Boy</strong>
                         </div>
                     </Col>
-                    <Col span={12}>
-                        <Space align="center">
-                            <Select defaultValue="Option1">
-                                <Option value="Option1">Option1</Option>
+                    <Col span={12} style={{ textAlign: "center" }}>
+                        <Space align="center" size="0">
+                            <Select size="large" defaultValue="Option1" >
+                                <Option value="Option1">All</Option>
                                 <Option value="Option2">Option2</Option>
                             </Select>
                             <Search
-                                placeholder="input search text"
+                                placeholder="I'm shopping for..."
                                 allowClear
                                 enterButton="Search"
                                 size="large"
@@ -36,11 +37,19 @@ class HeaderDTC extends Component {
                     </Col>
                     <Col span={6}>
                         <div className="fl-l">
-
+                            <Space size="large">
+                                <Badge color="blue" count={1} offset={[0, 30]}>
+                                    <Avatar size="large" icon={<HeartOutlined />} />
+                                </Badge>
+                                <Badge color="blue" count={1} offset={[0, 30]}>
+                                    <Avatar size="large" icon={<ShoppingOutlined />} />
+                                </Badge>
+                                <Avatar size="large" icon={<UserOutlined />} />
+                            </Space>
                         </div>
                     </Col>
                 </Row>
-                <Header className="header">
+                <Header className="header-menu">
 
                     <img className="logo" alt="ncc" src="https://s120-ava-talk.zadn.vn/c/a/e/7/18/120/671a305890b70992d360283fb5bae3c7.jpg"></img>
 
