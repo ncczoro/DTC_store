@@ -9,7 +9,7 @@ import { Layout } from 'antd';
 import jsonData from './data.json';
 class App extends Component {
 
-  onReceiContent(params){
+  onReceiContent(params) {
     console.log(params)
   }
 

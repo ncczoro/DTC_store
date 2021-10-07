@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Layout, Menu, Breadcrumb, Button, Card, Space } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import ThanhToan from './studying/formThanhToan';
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -12,6 +13,9 @@ class ContentDTC extends Component {
     super(props);
     console.log('content', props);
     this.onAddToCart3 = this.onAddToCart3.bind(this);
+    this.state = {
+      name: 'xx'
+    }
   }
 
   _content = this.props.data.map(e => {
@@ -37,6 +41,8 @@ class ContentDTC extends Component {
   onAddToCart2(a) { // cu phap ES6, arrow do the dung this nhu global variable
     alert('cach 2 arrow function js' + a + this);
     this.props.onReceiContent('from content');
+    this.setState({ name: 'gg' })
+
   }
   onAddToCart3() {
     alert('cach 3 dugn .bind(this) de thay arrow funtion js' + this);
@@ -90,7 +96,8 @@ class ContentDTC extends Component {
             <Space>
               {this._content}
             </Space>
-
+            {this.state.name}
+            <ThanhToan></ThanhToan>
           </Content>
         </Layout>
       </Content>
