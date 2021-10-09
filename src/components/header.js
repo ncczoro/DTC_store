@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import '../css/header.css';
 import '../App.css';
-import { Menu, Layout, Row, Col, Select, Input, Space, Avatar, Badge } from 'antd';
+import { Menu, Layout, Row, Col, Select, Input, Space, Avatar, Badge, Tooltip } from 'antd';
 import { UserOutlined, HeartOutlined, ShoppingOutlined } from '@ant-design/icons';
 
 const { Header } = Layout;
@@ -38,13 +38,19 @@ class HeaderDTC extends Component {
                     <Col span={6}>
                         <div className="fl-l">
                             <Space size="large">
-                                <Badge color="blue" count={1} offset={[0, 30]}>
-                                    <Avatar size="large" icon={<HeartOutlined />} />
-                                </Badge>
-                                <Badge color="blue" count={1} offset={[0, 30]}>
-                                    <Avatar size="large" icon={<ShoppingOutlined />} />
-                                </Badge>
-                                <Avatar size="large" icon={<UserOutlined />} />
+                                <Tooltip placement="bottom" title="Tài khoản">
+                                    <Avatar size="large" icon={<UserOutlined />} />
+                                </Tooltip>
+                                <Tooltip placement="bottom" title="Yêu thích">
+                                    <Badge color="blue" count={1} offset={[0, 30]}>
+                                        <Avatar size="large" icon={<HeartOutlined />} />
+                                    </Badge>
+                                </Tooltip>
+                                <Tooltip placement="bottom" title="Giỏ hàng">
+                                    <Badge color="blue" count={1} offset={[0, 30]}>
+                                        <Avatar size="large" icon={<ShoppingOutlined />} />
+                                    </Badge>
+                                </Tooltip>
                             </Space>
                         </div>
                     </Col>
@@ -59,7 +65,7 @@ class HeaderDTC extends Component {
                         <Menu.Item key="3">nav 3</Menu.Item>
                     </Menu>
                 </Header>
-            </div>
+            </div >
         )
     }
 }

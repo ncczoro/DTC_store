@@ -18,6 +18,7 @@ class ContentDTC extends Component {
     }
   }
 
+
   _content = this.props.data.map(e => {
     return <div key={e.name}>
       <Card >
@@ -97,7 +98,7 @@ class ContentDTC extends Component {
               {this._content}
             </Space>
             {this.state.name}
-            <ThanhToan></ThanhToan>
+            {/* <ThanhToan></ThanhToan> */}
           </Content>
         </Layout>
       </Content>
