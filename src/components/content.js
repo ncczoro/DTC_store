@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
 import { Layout, Menu, Breadcrumb, Button, Card, Space } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-import ThanhToan from './studying/formThanhToan';
+// import ThanhToan from './studying/formThanhToan';
+
+import Counter from './features/counter'
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -12,7 +13,6 @@ class ContentDTC extends Component {
   constructor(props) {
     super(props);
     console.log('content', props);
-    this.onAddToCart3 = this.onAddToCart3.bind(this);
     this.state = {
       name: 'xx'
     }
@@ -24,37 +24,14 @@ class ContentDTC extends Component {
       <Card >
         <img src={e.img} style={{ height: '200px', width: '200px' }}></img>
         <p>{e.name}</p>
-        <Button type="primary" onClick={this.onAddToCart1}>Add to cart1</Button>
-        <Button type="primary" onClick={() => this.onAddToCart2(e.name)}>Add to cart2</Button>
-        <Button type="primary" onClick={this.onAddToCart3}>Add to cart3</Button>
-        <Button type="primary" onClick={(ev) => { this.onAddToCart4(e.name, ev) }}>Add to cart4</Button>
-        <Button type="primary" onClick={this.onAddToCart5.bind(this, e.name)}>Add to cart5</Button>
+        <Button type="primary" onClick={(ev) => { this.onAddToCart(e.name, ev) }}>Add to cart</Button>
       </Card>
     </div>
   })
 
-
-
-  onAddToCart1() {
-    alert('cach 1 khong truyen tham so ' + this);
-  }
-
-  onAddToCart2(a) { // cu phap ES6, arrow do the dung this nhu global variable
-    alert('cach 2 arrow function js' + a + this);
-    this.props.onReceiContent('from content');
-    this.setState({ name: 'gg' })
-
-  }
-  onAddToCart3() {
-    alert('cach 3 dugn .bind(this) de thay arrow funtion js' + this);
-  }
-
-  onAddToCart4 = (name, event) => {
-    alert('cach truyen tham so 1: dung arrow function' + name + event.type + this);
-  }
-
-  onAddToCart5(a) {
-    alert('cach truyen tham so 2 dung .bind' + a + this)
+  onAddToCart = (name, event) => {
+    this.props.onReceiContent(3)
+    console.log('add', this.props,  this.props.children, name)
   }
 
   render() {
@@ -96,9 +73,8 @@ class ContentDTC extends Component {
           <Content style={{ padding: '0 24px', minHeight: 280 }}>
             <Space>
               {this._content}
+
             </Space>
-            {this.state.name}
-            {/* <ThanhToan></ThanhToan> */}
           </Content>
         </Layout>
       </Content>

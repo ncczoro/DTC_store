@@ -8,8 +8,14 @@ import TopBar from './components/topbar';
 import { Layout } from 'antd';
 import jsonData from './data.json';
 class App extends Component {
-
-  onReceiContent(params) {
+  constructor() {
+    super();
+    this.state = {
+      amount: 0
+    }
+  }
+  onReceiContent = (params) => {
+    this.setState({ amount: this.state.amount + 1 });
     console.log(params)
   }
 
@@ -17,7 +23,7 @@ class App extends Component {
     return (
       <Layout>
         <TopBar x="xx">noi dung children</TopBar>
-        <HeaderDTC></HeaderDTC>
+        <HeaderDTC product={this.state.amount}></HeaderDTC>
         <ContentDTC data={jsonData.Testimonials} onReceiContent={this.onReceiContent} ></ContentDTC>
         <FooterDTC></FooterDTC>
       </Layout>

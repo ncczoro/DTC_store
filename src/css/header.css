@@ -19,3 +19,12 @@
   height: 70px;
   line-height: 35px;
 }
+
+.header-menu{
+  /* background-color: #0071DF; */
+  align-items: center;
+  /* color: white; */
+  font-weight: bold;
+  align-content: center;
+  justify-content: center;
+}

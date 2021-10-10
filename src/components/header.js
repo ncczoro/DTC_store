@@ -4,13 +4,14 @@ import '../css/header.css';
 import '../App.css';
 import { Menu, Layout, Row, Col, Select, Input, Space, Avatar, Badge, Tooltip } from 'antd';
 import { UserOutlined, HeartOutlined, ShoppingOutlined } from '@ant-design/icons';
-
 const { Header } = Layout;
 const { Option } = Select;
 const { Search } = Input;
 const onSearch = value => console.log(value);
 class HeaderDTC extends Component {
-
+    constructor(props) {
+        super(props)
+    }
     render() {
         return (
             <div>
@@ -21,19 +22,19 @@ class HeaderDTC extends Component {
                         </div>
                     </Col>
                     <Col span={12} style={{ textAlign: "center" }}>
-                        <Space align="center" size="0">
-                            <Select size="large" defaultValue="Option1" >
+                        <Input.Group style={{ width: "100%" }} compact>
+                            <Select size="large" defaultValue="Option1" style={{ width: '10%' }}>
                                 <Option value="Option1">All</Option>
                                 <Option value="Option2">Option2</Option>
                             </Select>
-                            <Search
+                            <Search style={{ width: '50%' }}
                                 placeholder="I'm shopping for..."
                                 allowClear
                                 enterButton="Search"
                                 size="large"
                                 onSearch={onSearch}
                             />
-                        </Space>
+                        </Input.Group>
                     </Col>
                     <Col span={6}>
                         <div className="fl-l">
@@ -47,7 +48,7 @@ class HeaderDTC extends Component {
                                     </Badge>
                                 </Tooltip>
                                 <Tooltip placement="bottom" title="Giỏ hàng">
-                                    <Badge color="blue" count={1} offset={[0, 30]}>
+                                    <Badge color="blue" count={this.props.product} offset={[0, 30]}>
                                         <Avatar size="large" icon={<ShoppingOutlined />} />
                                     </Badge>
                                 </Tooltip>
@@ -55,14 +56,18 @@ class HeaderDTC extends Component {
                         </div>
                     </Col>
                 </Row>
-                <Header className="header-menu">
+                <Header style={{ background: '#f0f2f5' }}>
 
-                    <img className="logo" alt="ncc" src="https://s120-ava-talk.zadn.vn/c/a/e/7/18/120/671a305890b70992d360283fb5bae3c7.jpg"></img>
+                    {/* <img className="logo" alt="ncc" src="https://s120-ava-talk.zadn.vn/c/a/e/7/18/120/671a305890b70992d360283fb5bae3c7.jpg"></img> */}
 
-                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                        <Menu.Item key="1">nav 1</Menu.Item>
-                        <Menu.Item key="2">nav 2</Menu.Item>
-                        <Menu.Item key="3">nav 3</Menu.Item>
+                    <Menu className="header-menu" mode="horizontal" defaultSelectedKeys={['5']}>
+                        <Menu.Item key="1">HOT DEALS</Menu.Item>
+                        <Menu.Item key="2">ĐIỆN THOẠI</Menu.Item>
+                        <Menu.Item key="3">MÁY TÍNH BẢNG</Menu.Item>
+                        <Menu.Item key="4">ÂM THANH</Menu.Item>
+                        <Menu.Item key="5">LINH KIỆN ĐIÊN TỬ</Menu.Item>
+                        <Menu.Item key="6">ĐỒ CHƠI CÔNG NGHỆ</Menu.Item>
+                        <Menu.Item key="7">PHỤ KIỆN</Menu.Item>
                     </Menu>
                 </Header>
             </div >
